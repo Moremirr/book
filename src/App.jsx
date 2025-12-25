@@ -109,7 +109,7 @@ function App() {
             <h2 className="text-3xl md:text-5xl font-bold mb-8 text-white drop-shadow-md">
               Will you be my girlfriend?
             </h2>
-            <div className="flex flex-col md:flex-row gap-6 mt-4 items-center justify-center relative w-full h-32 md:h-auto">
+            <div className="flex flex-col md:flex-row gap-6 mt-4 items-center justify-center w-full">
               {/* YES Button */}
               <button
                 onClick={handleYes}
@@ -125,8 +125,7 @@ function App() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 onHoverStart={handleNoHover}
                 onClick={handleNoHover} // Just in case on mobile click
-                className="px-10 py-4 bg-gray-500/50 hover:bg-gray-600/50 rounded-full text-white/80 text-xl font-semibold backdrop-blur-sm shadow-inner absolute md:static"
-                style={{ top: 'auto', left: 'auto' }} // Reset static positioning quirks if needed
+                className="px-10 py-4 bg-gray-500/50 hover:bg-gray-600/50 rounded-full text-white/80 text-xl font-semibold backdrop-blur-sm shadow-inner"
               >
                 No
               </motion.button>
