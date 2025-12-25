@@ -53,7 +53,7 @@ function App() {
   };
 
   const handleNo = () => {
-    window.location.href = "https://drive.google.com/drive/folders/1-l5aGLOAtemWz3l-tbEY1eBeXH0i8BR1?usp=share_link";
+    window.open("https://drive.google.com/drive/folders/1-l5aGLOAtemWz3l-tbEY1eBeXH0i8BR1?usp=share_link", "_blank");
   };
 
   const handleYes = () => {
@@ -63,9 +63,9 @@ function App() {
       origin: { y: 0.6 },
       colors: ['#ff69b4', '#ff1493', '#ffffff']
     });
-    // Redirect to "Yes" link
+    // Redirect to "Yes" link in new tab
     setTimeout(() => {
-      window.location.href = "https://drive.google.com/drive/folders/1LQXbXP5NATjIwQrX1k_nUoC26-gR52u6?usp=share_link";
+      window.open("https://drive.google.com/drive/folders/1LQXbXP5NATjIwQrX1k_nUoC26-gR52u6?usp=share_link", "_blank");
     }, 1000);
   };
 
