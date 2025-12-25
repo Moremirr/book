@@ -72,13 +72,17 @@ function App() {
     switch (stage) {
       case 0:
         return (
-          <div className="flex flex-col items-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg text-white font-sans text-center">
+          <div className="flex flex-col items-center space-y-6">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg text-white font-sans text-center">
               Hi Adinda Sabrina! <span className="inline-block animate-bounce">🐮</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-8 font-light">
-              I have something I want to tell you... 🐑
-            </p>
+
+            <div className="bg-white/10 p-8 rounded-xl border border-white/20 backdrop-blur-md max-w-md w-full text-center shadow-inner">
+              <p className="text-lg md:text-xl text-white/90 font-light leading-relaxed">
+                I have something I want to tell you... 🐑
+              </p>
+            </div>
+
             <button
               onClick={handleNext}
               className="px-8 py-3 bg-white/20 hover:bg-white/40 border border-white/50 rounded-full text-white font-semibold transition-all backdrop-blur-sm shadow-[0_0_15px_rgba(255,255,255,0.5)] hover:scale-105"
@@ -90,16 +94,20 @@ function App() {
       case 1:
         return (
           <div className="flex flex-col items-center space-y-6">
-            <div className="relative">
+            <div className="relative mb-2">
               <Heart className="w-16 h-16 text-pink-300 animate-bounce absolute -top-10 left-1/2 transform -translate-x-1/2 opacity-50 blur-sm" />
               <Heart className="w-16 h-16 text-pink-100 relative z-10" fill="currentColor" />
             </div>
-            <p className="text-xl md:text-2xl text-white font-medium leading-relaxed">
-              Every time I see you, my day gets a little brighter. 🐈
-            </p>
-            <p className="text-lg text-white/80">
-              You have this way of making everything feel special.
-            </p>
+
+            <div className="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-md max-w-md w-full text-center shadow-inner">
+              <p className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-4">
+                Every time I see you, my day gets a little brighter. 🐈
+              </p>
+              <p className="text-lg text-white/80 font-light">
+                You have this way of making everything feel special.
+              </p>
+            </div>
+
             <button
               onClick={handleNext}
               className="mt-4 px-8 py-2 bg-white/10 hover:bg-white/30 rounded-full text-white border border-white/30 transition-all flex items-center gap-2"
@@ -111,15 +119,19 @@ function App() {
       case 2:
         return (
           <div className="flex flex-col items-center space-y-6">
-            <div className="flex gap-4 text-4xl animate-pulse">
+            <div className="flex gap-4 text-4xl animate-pulse mb-2">
               <span>🐔</span><span>🦆</span><span>🐇</span>
             </div>
-            <p className="text-xl md:text-2xl text-white font-medium leading-relaxed">
-              I love your smile, your laugh, and your passion.
-            </p>
-            <p className="text-lg text-white/80">
-              I've been feeling this way for a while now... 🐨
-            </p>
+
+            <div className="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-md max-w-md w-full text-center shadow-inner">
+              <p className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-4">
+                I love your smile, your laugh, and your passion.
+              </p>
+              <p className="text-lg text-white/80 font-light">
+                I've been feeling this way for a while now... 🐨
+              </p>
+            </div>
+
             <button
               onClick={handleNext}
               className="mt-4 px-8 py-2 bg-white/10 hover:bg-white/30 rounded-full text-white border border-white/30 transition-all flex items-center gap-2"
