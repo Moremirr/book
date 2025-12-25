@@ -1,9 +1,47 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, Stars, Sparkles, Music } from 'lucide-react';
+import { Heart, Stars, Sparkles } from 'lucide-react';
 import GlassCard from './components/GlassCard';
-import Background3D from './components/Background3D';
 import confetti from 'canvas-confetti';
+
+// Lightweight 2D Floating Hearts Component
+const FloatingHearts = () => {
+  const [hearts, setHearts] = useState([]);
+
+  useEffect(() => {
+    const newHearts = Array.from({ length: 20 }).map((_, i) => ({
+      id: i,
+      x: Math.random() * 100, // vw
+      y: Math.random() * 100, // vh
+      scale: Math.random() * 0.5 + 0.5,
+      duration: Math.random() * 10 + 10,
+      delay: Math.random() * 5,
+    }));
+    setHearts(newHearts);
+  }, []);
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {hearts.map((heart) => (
+        <motion.div
+          key={heart.id}
+          className="absolute text-pink-300/30"
+          initial={{ x: `${heart.x}vw`, y: `110vh`, opacity: 0 }}
+          animate={{ y: `-10vh`, opacity: [0, 1, 0] }}
+          transition={{
+            duration: heart.duration,
+            delay: heart.delay,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          style={{ scale: heart.scale }}
+        >
+          <Heart fill="currentColor" size={40} />
+        </motion.div>
+      ))}
+    </div>
+  );
+};
 
 function App() {
   const [stage, setStage] = useState(0);
@@ -166,12 +204,12 @@ function App() {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center relative overflow-hidden">
-      {/* 3D Background */}
-      <Background3D />
+      {/* Enhanced 2D Background */}
+      <FloatingHearts />
 
-      {/* Background Decorative Elements (Fallback/Overlay) */}
-      <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-purple-400/20 rounded-full blur-3xl animate-float pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-pink-400/20 rounded-full blur-3xl animate-float pointer-events-none" style={{ animationDelay: '2s' }} />
+      {/* Background Decorative Elements */}
+      <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-purple-400/30 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-pink-400/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
 
       <AnimatePresence mode="wait">
         <GlassCard key={stage}>
