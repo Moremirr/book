@@ -89,17 +89,17 @@ function App() {
       case 0:
         return (
           <div className="flex flex-col items-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg text-white font-sans">
-              Hi there... <span className="inline-block animate-pulse">✨</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg text-white font-sans text-center">
+              Hi Adinda Sabrina! <span className="inline-block animate-bounce">🐮</span>
             </h1>
             <p className="text-lg md:text-xl text-white/90 mb-8 font-light">
-              I have something I want to tell you.
+              I have something "moo-ving" to tell you... 🐑
             </p>
             <button
               onClick={handleNext}
               className="px-8 py-3 bg-white/20 hover:bg-white/40 border border-white/50 rounded-full text-white font-semibold transition-all backdrop-blur-sm shadow-[0_0_15px_rgba(255,255,255,0.5)] hover:scale-105"
             >
-              Okay?
+              What is it? 🐣
             </button>
           </div>
         );
@@ -111,10 +111,10 @@ function App() {
               <Heart className="w-16 h-16 text-pink-100 relative z-10" fill="currentColor" />
             </div>
             <p className="text-xl md:text-2xl text-white font-medium leading-relaxed">
-              Every time I see you, my day gets a little brighter.
+              Just like you care for animals... 🐈
             </p>
             <p className="text-lg text-white/80">
-              You have this way of making everything feel special.
+              Your kindness makes the world a softer place.
             </p>
             <button
               onClick={handleNext}
@@ -127,12 +127,14 @@ function App() {
       case 2:
         return (
           <div className="flex flex-col items-center space-y-6">
-            <Stars className="w-16 h-16 text-yellow-200 animate-spin-slow" />
+            <div className="flex gap-4 text-4xl animate-pulse">
+              <span>🐔</span><span>🦆</span><span>🐇</span>
+            </div>
             <p className="text-xl md:text-2xl text-white font-medium leading-relaxed">
-              I love your smile, your laugh, and just being around you.
+              I love your smile, your laugh, and your passion.
             </p>
             <p className="text-lg text-white/80">
-              I've been feeling this way for a while now...
+              Warning: I might be more clingy than a baby koala! 🐨
             </p>
             <button
               onClick={handleNext}
