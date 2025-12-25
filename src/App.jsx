@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, Stars, Sparkles } from 'lucide-react';
 import GlassCard from './components/GlassCard';
+import MusicPlayer from './components/MusicPlayer';
 import confetti from 'canvas-confetti';
 
 // Lightweight 2D Floating Hearts Component
@@ -199,6 +200,8 @@ function App() {
           {renderContent()}
         </GlassCard>
       </AnimatePresence>
+
+      <MusicPlayer />
     </div>
   );
 }
