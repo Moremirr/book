@@ -130,6 +130,28 @@ function App() {
         );
       case 3:
         return (
+          <div className="flex flex-col items-center space-y-6">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white drop-shadow-lg text-center">
+              Message from me 💌
+            </h1>
+            <div className="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-md max-w-md w-full text-center shadow-inner">
+              <p className="text-lg text-white/90 italic font-light leading-relaxed">
+                "Write your heartfelt letter here... Tell her everything you feel. <br />
+                How much she means to you, your favorite memories, and why she's the one."
+                <br /><br />
+                (Edit this text in the code!)
+              </p>
+            </div>
+            <button
+              onClick={handleNext}
+              className="mt-6 px-10 py-3 bg-white/20 hover:bg-white/40 rounded-full text-white font-semibold transition-all backdrop-blur-sm border border-white/30 hover:scale-105 flex items-center gap-2 shadow-lg"
+            >
+              One last thing... <Heart size={20} className="fill-current" />
+            </button>
+          </div>
+        );
+      case 4:
+        return (
           <div className="flex flex-col items-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-8 text-white drop-shadow-md">
               Will you be my girlfriend?
@@ -154,7 +176,7 @@ function App() {
 
           </div>
         );
-      case 4:
+      case 5:
         return (
           <div className="flex flex-col items-center">
             <motion.div
