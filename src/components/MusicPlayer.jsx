@@ -3,17 +3,21 @@ import { Music, Volume2, VolumeX } from 'lucide-react';
 
 const MusicPlayer = () => {
     const [isPlaying, setIsPlaying] = useState(false);
-    const audioRef = useRef(new Audio("/sempurna.mp3"));
+    const audioRef = useRef(null);
 
     useEffect(() => {
-        audioRef.current.loop = true;
-        audioRef.current.volume = 0.4;
+        // Set initial volume
+        if (audioRef.current) {
+            audioRef.current.volume = 0.5;
+        }
 
-        // Attempt autoplay immediately (might fail)
+        // Attempt autoplay immediately
         const playAudio = async () => {
             try {
-                await audioRef.current.play();
-                setIsPlaying(true);
+                if (audioRef.current) {
+                    await audioRef.current.play();
+                    setIsPlaying(true);
+                }
             } catch (err) {
                 console.log("Autoplay blocked, waiting for interaction");
                 setIsPlaying(false);
@@ -21,29 +25,30 @@ const MusicPlayer = () => {
         };
         playAudio();
 
-        // Fix: Add interaction listener to bypass browser autoplay policy
+        // Interaction listener fallback
         const handleUserInteraction = () => {
-            if (audioRef.current.paused) {
-                audioRef.current.play().then(() => setIsPlaying(true)).catch(e => console.log("Play failed:", e));
+            if (audioRef.current && audioRef.current.paused) {
+                audioRef.current.play()
+                    .then(() => setIsPlaying(true))
+                    .catch(e => console.error("Play failed:", e));
             }
-            // Remove listener after first interaction
             document.removeEventListener('click', handleUserInteraction);
         };
 
         document.addEventListener('click', handleUserInteraction);
 
-        // Cleanup
         return () => {
-            audioRef.current.pause();
             document.removeEventListener('click', handleUserInteraction);
         };
     }, []);
 
     const togglePlay = () => {
+        if (!audioRef.current) return;
+
         if (isPlaying) {
             audioRef.current.pause();
         } else {
-            audioRef.current.play().catch(e => console.log("Audio play failed:", e));
+            audioRef.current.play().catch(e => console.error("Manual play failed:", e));
         }
         setIsPlaying(!isPlaying);
     };
@@ -56,7 +61,8 @@ const MusicPlayer = () => {
             >
                 {isPlaying ? <Volume2 size={24} /> : <VolumeX size={24} />}
             </button>
-            <audio ref={audioRef} />
+            {/* Explicitly set src and loop here */}
+            <audio ref={audioRef} src="/sempurna.mp3" loop playsInline />
         </div>
     );
 };
