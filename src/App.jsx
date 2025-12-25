@@ -93,7 +93,7 @@ function App() {
               Hi Adinda Sabrina! <span className="inline-block animate-bounce">🐮</span>
             </h1>
             <p className="text-lg md:text-xl text-white/90 mb-8 font-light">
-              I have something "moo-ving" to tell you... 🐑
+              I have something I want to tell you... 🐑
             </p>
             <button
               onClick={handleNext}
@@ -111,10 +111,10 @@ function App() {
               <Heart className="w-16 h-16 text-pink-100 relative z-10" fill="currentColor" />
             </div>
             <p className="text-xl md:text-2xl text-white font-medium leading-relaxed">
-              Just like you care for animals... 🐈
+              Every time I see you, my day gets a little brighter. 🐈
             </p>
             <p className="text-lg text-white/80">
-              Your kindness makes the world a softer place.
+              You have this way of making everything feel special.
             </p>
             <button
               onClick={handleNext}
@@ -134,7 +134,7 @@ function App() {
               I love your smile, your laugh, and your passion.
             </p>
             <p className="text-lg text-white/80">
-              Warning: I might be more clingy than a baby koala! 🐨
+              I've been feeling this way for a while now... 🐨
             </p>
             <button
               onClick={handleNext}
