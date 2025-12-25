@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, Stars, Sparkles } from 'lucide-react';
 import GlassCard from './components/GlassCard';
@@ -45,42 +45,27 @@ const FloatingHearts = () => {
 
 function App() {
   const [stage, setStage] = useState(0);
-  const [noBtnPosition, setNoBtnPosition] = useState({ x: 0, y: 0 });
-  const noBtnRef = useRef(null);
+
 
   const handleNext = () => {
     setStage((prev) => prev + 1);
   };
 
-  const handleNoHover = () => {
-    const x = Math.random() * 200 - 100; // -100 to 100
-    const y = Math.random() * 200 - 100;
-    setNoBtnPosition({ x, y });
+  const handleNo = () => {
+    window.location.href = "https://drive.google.com/drive/folders/1-l5aGLOAtemWz3l-tbEY1eBeXH0i8BR1?usp=share_link";
   };
 
   const handleYes = () => {
-    setStage(4);
     confetti({
       particleCount: 150,
       spread: 70,
       origin: { y: 0.6 },
       colors: ['#ff69b4', '#ff1493', '#ffffff']
     });
-    // Fire more confetti after a delay
+    // Redirect to "Yes" link
     setTimeout(() => {
-      confetti({
-        particleCount: 100,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0 }
-      });
-      confetti({
-        particleCount: 100,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1 }
-      });
-    }, 500);
+      window.location.href = "https://drive.google.com/drive/folders/1LQXbXP5NATjIwQrX1k_nUoC26-gR52u6?usp=share_link";
+    }, 1000);
   };
 
   // Content for each stage
@@ -159,19 +144,15 @@ function App() {
                 Yes! 💖
               </button>
 
-              {/* NO Button (Runs Away) */}
-              <motion.button
-                ref={noBtnRef}
-                animate={noBtnPosition}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                onHoverStart={handleNoHover}
-                onClick={handleNoHover} // Just in case on mobile click
-                className="px-10 py-4 bg-gray-500/50 hover:bg-gray-600/50 rounded-full text-white/80 text-xl font-semibold backdrop-blur-sm shadow-inner"
+              {/* NO Button */}
+              <button
+                onClick={handleNo}
+                className="px-10 py-4 bg-gray-500/50 hover:bg-gray-600/50 rounded-full text-white/80 text-xl font-semibold backdrop-blur-sm shadow-inner transition hover:scale-105"
               >
                 No
-              </motion.button>
+              </button>
             </div>
-            <p className="text-xs text-white/50 mt-12">( Hint: The other button is broken 😉 )</p>
+
           </div>
         );
       case 4:
