@@ -63,10 +63,8 @@ function App() {
       origin: { y: 0.6 },
       colors: ['#ff69b4', '#ff1493', '#ffffff']
     });
-    // Redirect to "Yes" link in new tab
-    setTimeout(() => {
-      window.open("https://drive.google.com/drive/folders/1LQXbXP5NATjIwQrX1k_nUoC26-gR52u6?usp=share_link", "_blank");
-    }, 1000);
+    // Open immediately to avoid browser popup blockers
+    window.open("https://drive.google.com/drive/folders/1LQXbXP5NATjIwQrX1k_nUoC26-gR52u6?usp=share_link", "_blank");
   };
 
   // Content for each stage
