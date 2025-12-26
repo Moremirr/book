@@ -13,10 +13,7 @@ const MusicPlayer = ({ currentTrack }) => {
             // If track changes, reload and play
             const playAudio = async () => {
                 try {
-                    // Check if readyState is sufficient, otherwise load
-                    if (audioRef.current.readyState === 0) {
-                        audioRef.current.load();
-                    }
+                    audioRef.current.load(); // Force reload for new source
                     await audioRef.current.play();
                     setIsPlaying(true);
                 } catch (err) {
