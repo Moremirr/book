@@ -46,6 +46,7 @@ const FloatingHearts = () => {
 
 function App() {
   const [stage, setStage] = useState(0);
+  const [confirmation, setConfirmation] = useState(null); // 'yes' | 'no' | null
 
 
   const handleNext = () => {
@@ -53,10 +54,20 @@ function App() {
   };
 
   const handleNo = () => {
+    setConfirmation('no');
+  };
+
+  const executeNo = () => {
+    setConfirmation(null);
     window.open("https://drive.google.com/drive/folders/1-l5aGLOAtemWz3l-tbEY1eBeXH0i8BR1?usp=share_link", "_blank");
   };
 
   const handleYes = () => {
+    setConfirmation('yes');
+  };
+
+  const executeYes = () => {
+    setConfirmation(null);
     confetti({
       particleCount: 150,
       spread: 70,
@@ -188,6 +199,8 @@ function App() {
 
           </div>
         );
+
+
       case 5:
         return (
           <div className="flex flex-col items-center">
@@ -231,6 +244,51 @@ function App() {
         <GlassCard key={stage}>
           {renderContent()}
         </GlassCard>
+      </AnimatePresence>
+
+      {/* Confirmation Modal */}
+      <AnimatePresence>
+        {confirmation && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              className="bg-white/10 border border-white/20 backdrop-blur-xl p-8 rounded-2xl max-w-sm w-full text-center shadow-2xl"
+            >
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Are you sure? 🤔
+              </h3>
+              <p className="text-white/80 mb-8">
+                {confirmation === 'yes'
+                  ? "You're about to make me the happiest person alive! Ready?"
+                  : "Are you really sure? Think about it one more time... 🥺"}
+              </p>
+              <div className="flex gap-4 justify-center">
+                <button
+                  onClick={() => setConfirmation(null)}
+                  className="px-6 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/30 transition-all hover:scale-105"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={confirmation === 'yes' ? executeYes : executeNo}
+                  className={`px-6 py-2 rounded-full text-white font-bold shadow-lg transition-all hover:scale-105 transform ${confirmation === 'yes'
+                    ? "bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600"
+                    : "bg-gray-500 hover:bg-gray-600"
+                    }`}
+                >
+                  I'm Sure!
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
       </AnimatePresence>
 
       <MusicPlayer />
