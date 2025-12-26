@@ -1,31 +1,36 @@
 import { useState, useRef, useEffect } from 'react';
 import { Music, Volume2, VolumeX } from 'lucide-react';
 
-const MusicPlayer = () => {
+const MusicPlayer = ({ currentTrack }) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const audioRef = useRef(null);
 
+    // Handle track changes
     useEffect(() => {
-        // Set initial volume
         if (audioRef.current) {
             audioRef.current.volume = 0.5;
-        }
 
-        // Attempt autoplay immediately
-        const playAudio = async () => {
-            try {
-                if (audioRef.current) {
+            // If track changes, reload and play
+            const playAudio = async () => {
+                try {
+                    // Check if readyState is sufficient, otherwise load
+                    if (audioRef.current.readyState === 0) {
+                        audioRef.current.load();
+                    }
                     await audioRef.current.play();
                     setIsPlaying(true);
+                } catch (err) {
+                    console.log("Autoplay blocked or waiting for interaction", err);
+                    setIsPlaying(false);
                 }
-            } catch (err) {
-                console.log("Autoplay blocked, waiting for interaction");
-                setIsPlaying(false);
-            }
-        };
-        playAudio();
+            };
 
-        // Interaction listener fallback
+            playAudio();
+        }
+    }, [currentTrack]); // Dependency on currentTrack
+
+    // Initial interaction listener (keep existing logic generally)
+    useEffect(() => {
         const handleUserInteraction = () => {
             if (audioRef.current && audioRef.current.paused) {
                 audioRef.current.play()
@@ -61,8 +66,7 @@ const MusicPlayer = () => {
             >
                 {isPlaying ? <Volume2 size={24} /> : <VolumeX size={24} />}
             </button>
-            {/* Explicitly set src and loop here */}
-            <audio ref={audioRef} src="/sempurna.mp3" loop playsInline />
+            <audio ref={audioRef} src={currentTrack} loop playsInline />
         </div>
     );
 };

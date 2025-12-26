@@ -47,6 +47,7 @@ const FloatingHearts = () => {
 function App() {
   const [stage, setStage] = useState(0);
   const [confirmation, setConfirmation] = useState(null); // 'yes' | 'no' | null
+  const [currentTrack, setCurrentTrack] = useState("/sempurna.mp3");
 
 
   const handleNext = () => {
@@ -59,6 +60,10 @@ function App() {
 
   const executeNo = () => {
     setConfirmation(null);
+    setStage(6); // Go to "No" page
+    setCurrentTrack("/no-music.mp3"); // Placeholder for sad music
+    // Keep window.open if desired, or remove if the page change is enough. 
+    // User said "halaman utama juga akan berubah... begitupun... link", implying both.
     window.open("https://drive.google.com/drive/folders/1-l5aGLOAtemWz3l-tbEY1eBeXH0i8BR1?usp=share_link", "_blank");
   };
 
@@ -68,6 +73,8 @@ function App() {
 
   const executeYes = () => {
     setConfirmation(null);
+    setStage(5); // Go to "Yes" page
+    setCurrentTrack("/yes-music.mp3"); // Placeholder for happy music
     confetti({
       particleCount: 150,
       spread: 70,
@@ -226,6 +233,25 @@ function App() {
             </motion.div>
           </div>
         );
+      case 6:
+        return (
+          <div className="flex flex-col items-center">
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: [0, 1, 0.9] }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="text-8xl mb-6 grayscale opacity-80">🥀</div>
+            </motion.div>
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+              It's okay...
+            </h1>
+            <p className="text-xl text-white/80 max-w-lg text-center leading-relaxed">
+              I understand. Thank you for being honest with me. <br />
+              I'm still glad we met.
+            </p>
+          </div>
+        );
       default:
         return null;
     }
@@ -291,7 +317,7 @@ function App() {
         )}
       </AnimatePresence>
 
-      <MusicPlayer />
+      <MusicPlayer currentTrack={currentTrack} />
     </div>
   );
 }
