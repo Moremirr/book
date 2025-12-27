@@ -190,14 +190,16 @@ function App() {
               <Stars className="w-6 h-6 text-yellow-300" />
             </div>
 
-            <div className="bg-gradient-to-br from-white/15 to-white/5 p-6 rounded-2xl border border-white/25 backdrop-blur-lg max-w-md w-full shadow-xl">
+            <div className="bg-gradient-to-br from-white/15 to-white/5 p-6 rounded-2xl border border-white/25 backdrop-blur-lg max-w-2xl w-full shadow-xl">
               <div className="space-y-4">
                 <p className="text-lg text-white/95 font-medium leading-relaxed text-center">
-                  ✨ Write your important notes here... ✨
+                  Setelah halaman ini kamu harus siap untuk membuat pilihan, whatever you choose i will always support it, intinya aku bakal nerima pilihan apapun yang kamu pilih <br />
+                  Just choose what your heart want<br />
+                  Oh yah aku ga akan bales chat mu kalo kamu belum make the choice. Jadi pastiin ketika kamu udah nentuin pilihan kamu, just chat me okay? <br />
+                  One last thing, kamu ga perlu langsung ngasih aku jawaban pada hari ini, i'll wait as long as you need to answer.
                 </p>
                 <p className="text-base text-white/80 font-light leading-relaxed text-center">
-                  This is your special message space. <br />
-                  (Edit this text in the code!)
+                  (btw jangan lupa chat ya kalo kamu udah buat choice nya, disini gaada fitur yang ngirim hasil pilihan kamu ke aku olehnya😭)
                 </p>
               </div>
             </div>
