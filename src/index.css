@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
+html {
+  height: 100%;
+  height: -webkit-fill-available;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at top left, #a18cd1 0%, #fbc2eb 100%) no-repeat fixed;
+  background-color: #a18cd1;
+}
+
 body,
 #root {
   height: 100%;
@@ -10,26 +19,7 @@ body,
   padding: 0;
   width: 100%;
   overflow: hidden;
-}
-
-body {
-  background-color: #a18cd1;
-  /* Base fallback */
-}
-
-/* Stable background for iOS */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at top left, #a18cd1 0%, #fbc2eb 100%);
-  z-index: -1;
-  pointer-events: none;
+  background: transparent !important;
 }
 
 @layer base {
@@ -40,32 +30,29 @@ body::before {
 
 /* Glassmorphism Utilities */
 .glass {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  /* Performance optimizations for mobile */
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* GPU Acceleration for smooth blur */
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
   will-change: backdrop-filter, transform;
 }
 
 .glass-dark {
-  background: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  /* Performance optimizations for mobile */
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  /* GPU Acceleration for smooth blur */
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  will-change: backdrop-filter, transform;
 }
 
 /* Animation Utilities */
