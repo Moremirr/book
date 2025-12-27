@@ -57,12 +57,14 @@ const MusicPlayer = ({ currentTrack }) => {
 
     return (
         <div className="fixed top-4 right-4 z-50">
-            <button
-                onClick={togglePlay}
-                className="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-full text-white/80 hover:bg-white/20 transition-all shadow-lg animate-pulse hover:animate-none"
-            >
-                {isPlaying ? <Volume2 size={24} /> : <VolumeX size={24} />}
-            </button>
+            {showToggle && (
+                <button
+                    onClick={togglePlay}
+                    className="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-full text-white/80 hover:bg-white/20 transition-all shadow-lg animate-pulse hover:animate-none"
+                >
+                    {isPlaying ? <Volume2 size={24} /> : <VolumeX size={24} />}
+                </button>
+            )}
             <audio ref={audioRef} src={currentTrack} loop playsInline preload="metadata" />
         </div>
     );
