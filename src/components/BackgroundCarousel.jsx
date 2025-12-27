@@ -50,14 +50,15 @@ const BackgroundCarousel = ({ images }) => {
                             {rowImages.map((src, index) => (
                                 <div
                                     key={`${rowIndex}-${index}`}
-                                    className="h-full flex-shrink-0"
+                                    className="h-full flex-shrink-0 overflow-hidden"
                                     style={{ width: '35vw', minWidth: '280px' }}
                                 >
                                     <img
                                         src={src}
                                         alt=""
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-cover object-center"
                                         loading="eager"
+                                        style={{ objectFit: 'cover', width: '100%', height: '100%' }}
                                     />
                                 </div>
                             ))}
