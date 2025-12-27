@@ -190,7 +190,7 @@ function App() {
               <Stars className="w-6 h-6 text-yellow-300" />
             </div>
 
-            <div className="bg-gradient-to-br from-white/15 to-white/5 p-6 rounded-2xl border border-white/25 backdrop-blur-lg max-w-2xl w-full shadow-xl">
+            <div className="bg-gradient-to-br from-white/15 to-white/5 p-6 rounded-2xl border border-white/25 backdrop-blur-lg max-w-md md:max-w-2xl w-full shadow-xl">
               <div className="space-y-4">
                 <p className="text-lg text-white/95 font-medium leading-relaxed text-center">
                   Setelah halaman ini kamu harus siap untuk membuat pilihan, whatever you choose i will always support it, intinya aku bakal nerima pilihan apapun yang kamu pilih <br />
