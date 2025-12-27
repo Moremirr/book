@@ -107,13 +107,7 @@ function App() {
         );
       case 1:
         return (
-          <div className="flex flex-col items-center space-y-6 relative z-20">
-            <BackgroundCarousel images={[
-              "https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=2070&auto=format&fit=crop",
-              "https://images.unsplash.com/photo-1516589178581-a78c3564a7b5?q=80&w=2070&auto=format&fit=crop",
-              "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=1976&auto=format&fit=crop",
-              "https://images.unsplash.com/photo-1516233758813-a38d024919c5?q=80&w=1968&auto=format&fit=crop"
-            ]} />
+          <div className="flex flex-col items-center space-y-6">
             <div className="relative mb-2">
               <Heart className="w-16 h-16 text-pink-300 animate-bounce absolute -top-10 left-1/2 transform -translate-x-1/2 opacity-50 blur-sm" />
               <Heart className="w-16 h-16 text-pink-100 relative z-10" fill="currentColor" />
@@ -261,12 +255,26 @@ function App() {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center relative overflow-hidden">
+      {/* Background Carousel for Stage 1 */}
+      {stage === 1 && (
+        <BackgroundCarousel images={[
+          "https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=2070&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1516589178581-a78c3564a7b5?q=80&w=2070&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=1976&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1516233758813-a38d024919c5?q=80&w=1968&auto=format&fit=crop"
+        ]} />
+      )}
+
       {/* Enhanced 2D Background */}
-      <FloatingHearts />
+      {stage !== 1 && <FloatingHearts />}
 
       {/* Background Decorative Elements */}
-      <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-purple-400/30 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-pink-400/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+      {stage !== 1 && (
+        <>
+          <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-purple-400/30 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-pink-400/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+        </>
+      )}
 
       <AnimatePresence mode="wait">
         <GlassCard key={stage}>
