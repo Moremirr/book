@@ -93,7 +93,7 @@ function App() {
 
             <div className="bg-white/10 p-8 rounded-xl border border-white/20 backdrop-blur-md max-w-md w-full text-center shadow-inner">
               <p className="text-lg md:text-xl text-white/90 font-light leading-relaxed">
-                I have something I want to tell you... 🐑
+                I have something I want to tell you...
               </p>
             </div>
 
@@ -101,7 +101,7 @@ function App() {
               onClick={handleNext}
               className="px-8 py-3 bg-white/20 hover:bg-white/40 border border-white/50 rounded-full text-white font-semibold transition-all backdrop-blur-sm shadow-[0_0_15px_rgba(255,255,255,0.5)] hover:scale-105"
             >
-              What is it? 🐣
+              What is it?
             </button>
           </div>
         );
@@ -113,12 +113,12 @@ function App() {
               <Heart className="w-16 h-16 text-pink-100 relative z-10" fill="currentColor" />
             </div>
 
-            <div className="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-md max-w-md w-full text-center shadow-inner">
+            <div className="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-md max-w-xl w-full text-center shadow-inner">
               <p className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-4">
-                Every time I see you, my day gets a little brighter. 🐈
+                Every time i interact with you, my day gets a little brighter. Seluruh beban hidup yang aku miliki entah kenapa menjadi lebih ringan.
               </p>
               <p className="text-lg text-white/80 font-light">
-                You have this way of making everything feel special.
+                You have this way of making everything feel fun.
               </p>
             </div>
 
@@ -137,12 +137,12 @@ function App() {
               <span>🐔</span><span>🦆</span><span>🐇</span>
             </div>
 
-            <div className="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-md max-w-md w-full text-center shadow-inner">
+            <div className="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-md max-w-xl w-full text-center shadow-inner">
               <p className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-4">
-                I love your smile, your laugh, and your passion.
+                I love your smile, your laugh, your strength, the way you light up the room when you enter.
               </p>
               <p className="text-lg text-white/80 font-light">
-                I've been feeling this way for a while now... 🐨
+                It’s like a gift that keeps on giving.
               </p>
             </div>
 
@@ -168,14 +168,14 @@ function App() {
 
             <div className="bg-white/10 p-3 px-5 rounded-xl border border-white/20 backdrop-blur-md text-center shadow-inner">
               <p className="text-sm md:text-base text-white/90 font-light">
-                Message from me 💌
+                Next time kita mukbang sushi dan dimsum mentai itu
               </p>
             </div>
             <button
               onClick={handleNext}
               className="mt-6 px-10 py-3 bg-white/20 hover:bg-white/40 rounded-full text-white font-semibold transition-all backdrop-blur-sm border border-white/30 hover:scale-105 flex items-center gap-2 shadow-lg"
             >
-              One last thing... <Heart size={20} className="fill-current" />
+              One last thing
             </button>
           </div>
         );
