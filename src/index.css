@@ -8,7 +8,10 @@ html {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  /* Background moved to a fixed div to solve mobile safe-area issues */
+  /* Fallback color to hide white overscroll bars */
+  background-color: #a18cd1;
+  /* Prevent elastic scrolling on mobile */
+  overscroll-behavior: none;
 }
 
 body,
@@ -19,6 +22,7 @@ body,
   width: 100%;
   overflow: hidden;
   background: transparent !important;
+  overscroll-behavior: none;
 }
 
 @layer base {
@@ -33,11 +37,14 @@ body,
   inset: 0;
   width: 100vw;
   height: 100vh;
+  min-height: 100dvh;
+  /* Enforce full mobile height */
   height: 100dvh;
   z-index: -50;
   background: radial-gradient(circle at top left, #a18cd1 0%, #fbc2eb 100%);
   /* Ensure it stays put */
   transform: translate3d(0, 0, 0);
+  touch-action: none;
 }
 
 /* Glassmorphism Utilities */
