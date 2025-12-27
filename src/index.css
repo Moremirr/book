@@ -3,29 +3,40 @@
 @tailwind utilities;
 
 html {
-  min-height: 100dvh;
+  height: 100%;
   margin: 0;
   padding: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-  /* Dual-tone Safety Gradient: Purple Top, Pink Bottom */
+  overflow: hidden;
+  /* Lock the outer frame */
+  /* Static Safety Gradient: NEVER moves. Purple Top, Pink Bottom */
   background: linear-gradient(to bottom, #a18cd1, #fbc2eb);
-  overscroll-behavior: none;
-  scrollbar-width: none;
 }
 
-body,
-#root {
-  min-height: 100dvh;
+body {
+  height: 100%;
   margin: 0;
   padding: 0;
   width: 100%;
-  position: relative;
+  overflow: hidden;
+  /* Lock the body too */
   background: transparent !important;
 }
 
-/* Hide scrollbar for Chrome/Safari/Opera */
-::-webkit-scrollbar {
+#root {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  /* The actual scrollable container */
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  /* Smooth scrolling on iOS */
+  position: relative;
+  overscroll-behavior: none;
+  /* No bounce = no gaps */
+}
+
+/* Hide scrollbars */
+#root::-webkit-scrollbar {
   display: none;
 }
 
