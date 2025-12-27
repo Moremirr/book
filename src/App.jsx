@@ -108,12 +108,12 @@ function App() {
       case 1:
         return (
           <div className="flex flex-col items-center space-y-6">
-            <div className="flex flex-col items-center gap-2 mb-2">
-              <Heart className="w-16 h-16 text-pink-300 animate-bounce opacity-50 blur-sm" />
-              <Heart className="w-16 h-16 text-pink-100 -mt-12" fill="currentColor" />
+            <div className="relative h-16 w-16 mb-2">
+              <Heart className="w-16 h-16 text-pink-300 animate-bounce absolute inset-0 opacity-50 blur-sm" />
+              <Heart className="w-16 h-16 text-pink-100 relative z-10" fill="currentColor" />
             </div>
 
-            <div className="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-md max-w-xl w-full text-center shadow-inner">
+            <div className="bg-white/10 p-5 md:p-6 rounded-xl border border-white/20 backdrop-blur-md max-w-md md:max-w-xl w-full text-center shadow-inner">
               <p className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-4 text-justify">
                 Every time i interact with you, my day gets a little brighter. Seluruh beban hidup yang aku miliki entah kenapa menjadi lebih ringan.
               </p>
@@ -292,7 +292,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-[100dvh] w-full flex items-center justify-center relative overflow-hidden p-4">
+    <div className="h-[100dvh] w-full flex items-center justify-center relative overflow-hidden p-4">
       {/* Background Carousel for Stage 1 */}
       {stage === 1 && (
         <BackgroundCarousel images={[
