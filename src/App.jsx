@@ -253,9 +253,18 @@ function App() {
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 shadow-pink-500/50 drop-shadow-lg">
               Yay! I'm so happy! 🎉
             </h1>
-            <p className="text-xl text-white/90">
-              Best decision ever. ❤️
-            </p>
+            <div className="max-h-[60vh] overflow-y-auto scrollbar-thin scrollbar-thumb-white/20 pr-4 mt-4">
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed text-justify">
+                Haloo dindin, ini beneran nih kamu pilih opsi iya!??, gila banget dunia ini <br /><br />
+                THANK YOUUU UDAH PILIH IYA YAH‼️‼️‼️ <br /><br />
+                Speechless banget nih aku, ga nyangka si adindut mau ngasih gua kesempatan😿, ga nyangka doa-doa aku terjawab😿 <br /><br />
+                I know your last relationship might have given you some bad memories and trust issues with this kind of relationship, karena itu aku ga akan menyiakan kepercayaan yang udah kamu kasih ke aku, aku akan usahain sebaik mungkin to give the love you deserve. <br /><br />
+                Perkataan doang sulit untuk nunjukin kebahagiaan aku dari kamu yang memilih untuk memberi aku kesempatan dalam menjalankan kisah romantis yang alay seperti di film-film, dibalik kekurangan dan kesalahan yang udah aku buat selamat beberapa bulan kita bertemu kembali ini, aku mau ngucapin makasih lagi ke kamu, karena kamu mau mencoba menerima aku for who I am, dan tentus saja AKU JANJI BAKAL BERUSAHA NGILANGIN BAD HABBITS DAN HAL BURUK LAINNYA DARI DIRI AKU. <br /><br />
+                Mungkin masih banyak hal yang perlu aku pelajari dari hal-hal kek ginian, but i’ll try my best to improve upon it andi’ll do my best too to improve the way i treat you. I’ll try to make you the HAPPIEST GIRL EVER IN THE WORLD😋 <br /><br />
+                Abis ini mungkin akan ada banyak tantangan dan rintangan untuk kita, but as long as we’ve got each other, aku rasa apapun bisa ditrabas💪 <br /><br />
+                Ditunggu availablenya ya, nanti kita metu asik, gua traktir (kecuali playtopia)
+              </p>
+            </div>
             <motion.div
               animate={{ rotate: [0, 10, -10, 0] }}
               transition={{ repeat: Infinity, duration: 2 }}
