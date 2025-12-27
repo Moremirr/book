@@ -80,20 +80,29 @@ function App() {
       {/* Global Fixed Background */}
       <div className="fixed-background" />
 
-      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-10">
-        {/* Background Carousel for Stage 1 */}
+      {/* Background Carousel for Stage 1 (Oversized & Fixed) */}
+      <AnimatePresence>
         {stage === 1 && (
-          <BackgroundCarousel images={[
-            "/foto1.jpg",
-            "/foto2.jpg",
-            "/foto3.jpg",
-            "/foto4.jpg",
-            "/foto5.jpg",
-            "/foto6.jpg",
-            "/foto7.jpg"
-          ]} />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <BackgroundCarousel images={[
+              "/foto1.jpg",
+              "/foto2.jpg",
+              "/foto3.jpg",
+              "/foto4.jpg",
+              "/foto5.jpg",
+              "/foto6.jpg",
+              "/foto7.jpg"
+            ]} />
+          </motion.div>
         )}
+      </AnimatePresence>
 
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-10">
         {/* Enhanced 2D Background */}
         {stage !== 1 && <FloatingHearts />}
 
