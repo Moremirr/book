@@ -162,7 +162,7 @@ function App() {
               <img
                 src="/willu.jpg"
                 alt="Willu"
-                className="w-56 h-56 md:w-72 md:h-72 object-cover rounded-2xl border-4 border-white/30 shadow-2xl"
+                className="w-80 h-80 md:w-96 md:h-96 object-cover rounded-2xl border-4 border-white/30 shadow-2xl"
               />
             </div>
 
