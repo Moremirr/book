@@ -8,8 +8,7 @@ html {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: radial-gradient(circle at top left, #a18cd1 0%, #fbc2eb 100%) no-repeat fixed;
-  background-color: #a18cd1;
+  /* Background moved to a fixed div to solve mobile safe-area issues */
 }
 
 body,
@@ -28,18 +27,36 @@ body,
   }
 }
 
+/* Fixed Background Layer */
+.fixed-background {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: -50;
+  background: radial-gradient(circle at top left, #a18cd1 0%, #fbc2eb 100%);
+  /* Ensure it stays put */
+  transform: translate3d(0, 0, 0);
+}
+
 /* Glassmorphism Utilities */
 .glass {
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.2);
+
+  /* Optimize backdrop-filter performance */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  /* GPU Acceleration for smooth blur */
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  will-change: backdrop-filter, transform;
+
+  /* Hardware Acceleration */
+  transform: translateZ(0);
+  will-change: backdrop-filter;
+  isolation: isolate;
+  /* Create new stacking context */
 }
 
 .glass-dark {
@@ -49,10 +66,8 @@ body,
   -webkit-backdrop-filter: blur(8px);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  /* GPU Acceleration for smooth blur */
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  will-change: backdrop-filter, transform;
+  transform: translateZ(0);
+  will-change: backdrop-filter;
 }
 
 /* Animation Utilities */

@@ -77,6 +77,9 @@ function App() {
 
   return (
     <div className="fixed inset-0 w-full h-[100dvh] overflow-hidden">
+      {/* Global Fixed Background */}
+      <div className="fixed-background" />
+
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-10">
         {/* Background Carousel for Stage 1 */}
         {stage === 1 && (

@@ -45,7 +45,12 @@ const BackgroundCarousel = ({ images }) => {
                                     ease: 'linear',
                                 },
                             }}
-                            style={{ width: 'fit-content', transform: 'translateZ(0)' }}
+                            style={{
+                                width: 'fit-content',
+                                transform: 'translateZ(0)',
+                                willChange: 'transform',
+                                backfaceVisibility: 'hidden'
+                            }}
                         >
                             {rowImages.map((src, index) => (
                                 <div
@@ -59,7 +64,7 @@ const BackgroundCarousel = ({ images }) => {
                                         className="w-full h-full object-cover object-center"
                                         loading="eager"
                                         decoding="async"
-                                        style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                                        style={{ objectFit: 'cover', width: '100%', height: '100%', transform: "translateZ(0)" }}
                                     />
                                 </div>
                             ))}
