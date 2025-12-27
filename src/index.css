@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 html {
-  height: 100%;
+  height: 100dvh;
+  width: 100vw;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -13,18 +14,19 @@ html {
 }
 
 body {
-  height: 100%;
+  height: 100dvh;
+  width: 100vw;
   margin: 0;
   padding: 0;
-  width: 100%;
   overflow: hidden;
   /* Lock the body too */
-  background: transparent !important;
+  /* Double Safety: Body is also Purple to prevent white bars */
+  background-color: #a18cd1 !important;
 }
 
 #root {
-  height: 100%;
-  width: 100%;
+  height: 100dvh;
+  width: 100vw;
   overflow-y: auto;
   /* The actual scrollable container */
   overflow-x: hidden;
