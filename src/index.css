@@ -3,28 +3,26 @@
 @tailwind utilities;
 
 html {
-  width: 100%;
-  height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  /* Ultimate fallback */
-  background: #a18cd1;
+  /* Hard fallback to gradient */
+  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+  overscroll-behavior: none;
 }
 
 body,
 #root {
-  /* BODY LOCK: Force the body to match the viewport exactly and prevent scrolling */
-  position: fixed;
-  inset: 0;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
   width: 100%;
-  height: 100%;
+  position: relative;
   overflow: hidden;
+  /* Ensure transparent so html bg shows through if needed */
   background: transparent !important;
-  touch-action: none;
-  /* Disable native touch gestures */
-  -webkit-user-select: none;
-  user-select: none;
+  overscroll-behavior: none;
 }
 
 @layer base {
@@ -35,16 +33,15 @@ body,
 
 /* Fixed Background Layer */
 .fixed-background {
-  /* Absolute relative to the fixed body */
-  position: absolute;
-  /* Massive oversize to ensure coverage even if address bar jumps */
-  top: -50vh;
-  left: -50vw;
-  width: 200vw;
-  height: 200vh;
-  z-index: -50;
+  /* Anchored Oversizing Strategy */
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -10;
+  /* Higher than before to cover body */
   background: radial-gradient(circle at top left, #a18cd1 0%, #fbc2eb 100%);
-  /* Ensure it stays put */
   transform: translate3d(0, 0, 0);
   pointer-events: none;
 }
