@@ -3,26 +3,23 @@
 @tailwind utilities;
 
 html {
-  height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   /* Fallback to the bottom pink color to hide scrolling gaps */
   background: #fbc2eb;
+  /* Prevent elastic scrolling/bounce on the root to hide background */
   overscroll-behavior: none;
 }
 
 body,
 #root {
-  height: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   width: 100%;
   position: relative;
-  overflow: hidden;
-  /* Ensure transparent so html bg shows through if needed */
   background: transparent !important;
-  overscroll-behavior: none;
 }
 
 @layer base {

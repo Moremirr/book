@@ -76,7 +76,7 @@ function App() {
   };
 
   return (
-    <div className="fixed inset-0 w-full h-full overflow-hidden">
+    <div className="relative min-h-screen w-full overflow-x-hidden">
       {/* Global Fixed Background */}
       <div className="fixed-background" />
 
@@ -117,7 +117,7 @@ function App() {
       </div>
 
       {/* Content Layer (Respects Safe Area Padding) */}
-      <div className="relative w-full h-full flex items-center justify-center p-4 pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] z-10 pointer-events-none">
+      <div className="relative w-full min-h-screen flex items-center justify-center p-4 pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] z-10 pointer-events-none">
         <div className="pointer-events-auto flex items-center justify-center w-full max-w-lg">
           <AnimatePresence mode="wait">
             <GlassCard key={stage}>
