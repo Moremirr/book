@@ -179,6 +179,15 @@ function App() {
       case 4:
         return (
           <div className="flex flex-col items-center">
+            {/* Willu Image */}
+            <div className="mb-6">
+              <img
+                src="/willu.png"
+                alt="Willu"
+                className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-2xl border-4 border-white/30 shadow-2xl"
+              />
+            </div>
+
             <h2 className="text-3xl md:text-5xl font-bold mb-8 text-white drop-shadow-md">
               Will you be my girlfriend?
             </h2>
