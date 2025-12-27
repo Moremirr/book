@@ -191,7 +191,7 @@ function App() {
             </div>
 
             <div className="bg-gradient-to-br from-white/15 to-white/5 p-6 rounded-2xl border border-white/25 backdrop-blur-lg max-w-md md:max-w-2xl w-full shadow-xl">
-              <div className="space-y-4 max-h-[50vh] overflow-y-auto scrollbar-thin scrollbar-thumb-white/20 pr-2">
+              <div className="space-y-4 max-h-[50vh] overflow-y-auto scrollbar-thin scrollbar-thumb-white/20 pr-2 touch-auto">
                 <p className="text-lg text-white/95 font-medium leading-relaxed text-justify">
                   Setelah halaman ini kamu harus siap untuk membuat pilihan, whatever you choose i will always support it, intinya aku bakal nerima pilihan apapun yang kamu pilih <br />
                   Just choose what your heart want<br />
@@ -253,7 +253,7 @@ function App() {
             <h1 className="text-2xl md:text-5xl font-bold text-white mb-2 shadow-pink-500/50 drop-shadow-lg text-center">
               Yay! I'm so happy! 🎉
             </h1>
-            <div className="max-h-[60vh] overflow-y-auto scrollbar-thin scrollbar-thumb-white/20 pr-4 mt-4">
+            <div className="max-h-[60vh] overflow-y-auto scrollbar-thin scrollbar-thumb-white/20 pr-4 mt-4 touch-auto">
               <p className="text-lg md:text-xl text-white/90 leading-relaxed text-justify">
                 Haloo dindin, ini beneran nih kamu pilih opsi iya!??, gila banget dunia ini <br /><br />
                 THANK YOUUU UDAH PILIH IYA YAH‼️‼️‼️ <br /><br />
@@ -292,7 +292,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen min-h-[100dvh] w-full flex items-center justify-center relative overflow-hidden p-4">
+    <div className="h-[100dvh] w-full flex items-center justify-center relative overflow-hidden p-4">
       {/* Background Carousel for Stage 1 */}
       {stage === 1 && (
         <BackgroundCarousel images={[
