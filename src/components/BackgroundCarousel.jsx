@@ -16,10 +16,11 @@ const BackgroundCarousel = ({ images }) => {
         { direction: 'right', duration: 80, offset: 0 },
         { direction: 'left', duration: 70, offset: 3 },
         { direction: 'right', duration: 90, offset: 5 },
+        { direction: 'left', duration: 85, offset: 2 },
     ];
 
     return (
-        <div className="fixed -top-[50%] -left-[50%] w-[200%] h-[200%] overflow-hidden z-0 pointer-events-none flex flex-col">
+        <div className="fixed inset-0 h-full w-full overflow-hidden z-0 pointer-events-none flex flex-col">
             {/* Overlay for readability */}
             <div className="absolute inset-0 bg-black/50 z-10" />
 

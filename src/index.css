@@ -33,16 +33,14 @@ body,
 
 /* Fixed Background Layer */
 .fixed-background {
-  /* Anchored Oversizing Strategy */
   position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  inset: 0;
+  width: 100vw;
+  /* Use lvh (Largest Viewport Height) to cover area behind address bars on mobile */
+  height: 100lvh;
   z-index: -10;
-  /* Higher than before to cover body */
   background: radial-gradient(circle at top left, #a18cd1 0%, #fbc2eb 100%);
-  transform: translate3d(0, 0, 0);
+  transform: translateZ(0);
   pointer-events: none;
 }
 
