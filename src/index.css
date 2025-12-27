@@ -34,10 +34,13 @@ body,
 /* Fixed Background Layer */
 .fixed-background {
   position: fixed;
-  inset: 0;
-  width: 100vw;
-  /* Use lvh (Largest Viewport Height) to cover area behind address bars on mobile */
-  height: 100lvh;
+  /* Vertical bleeding to cover status bars / address bars */
+  top: -20vh;
+  bottom: -20vh;
+  left: 0;
+  width: 100%;
+  min-height: 140vh;
+  /* Ensure it's tall enough */
   z-index: -10;
   background: radial-gradient(circle at top left, #a18cd1 0%, #fbc2eb 100%);
   transform: translateZ(0);
