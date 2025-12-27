@@ -292,36 +292,44 @@ function App() {
   };
 
   return (
-    <div className="fixed inset-0 w-full flex items-center justify-center overflow-hidden p-4 pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
-      {/* Background Carousel for Stage 1 */}
-      {stage === 1 && (
-        <BackgroundCarousel images={[
-          "/foto1.jpg",
-          "/foto2.jpg",
-          "/foto3.jpg",
-          "/foto4.jpg",
-          "/foto5.jpg",
-          "/foto6.jpg",
-          "/foto7.jpg"
-        ]} />
-      )}
+    <div className="fixed inset-0 w-full h-full overflow-hidden">
+      {/* Absolute Background Layer (Ignores Safe Area Padding) */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+        {/* Background Carousel for Stage 1 */}
+        {stage === 1 && (
+          <BackgroundCarousel images={[
+            "/foto1.jpg",
+            "/foto2.jpg",
+            "/foto3.jpg",
+            "/foto4.jpg",
+            "/foto5.jpg",
+            "/foto6.jpg",
+            "/foto7.jpg"
+          ]} />
+        )}
 
-      {/* Enhanced 2D Background */}
-      {stage !== 1 && <FloatingHearts />}
+        {/* Enhanced 2D Background */}
+        {stage !== 1 && <FloatingHearts />}
 
-      {/* Background Decorative Elements */}
-      {stage !== 1 && (
-        <>
-          <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-purple-400/30 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-pink-400/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-        </>
-      )}
+        {/* Background Decorative Elements */}
+        {stage !== 1 && (
+          <>
+            <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-purple-400/30 rounded-full blur-3xl animate-float" />
+            <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-pink-400/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+          </>
+        )}
+      </div>
 
-      <AnimatePresence mode="wait">
-        <GlassCard key={stage}>
-          {renderContent()}
-        </GlassCard>
-      </AnimatePresence>
+      {/* Content Layer (Respects Safe Area Padding) */}
+      <div className="relative w-full h-full flex items-center justify-center p-4 pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] z-10 pointer-events-none">
+        <div className="pointer-events-auto flex items-center justify-center w-full max-w-lg">
+          <AnimatePresence mode="wait">
+            <GlassCard key={stage}>
+              {renderContent()}
+            </GlassCard>
+          </AnimatePresence>
+        </div>
+      </div>
 
       {/* Confirmation Modal */}
       <AnimatePresence>
