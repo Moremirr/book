@@ -3,12 +3,17 @@
 @tailwind utilities;
 
 html,
-body {
+body,
+#root {
   height: 100%;
   height: -webkit-fill-available;
+  width: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
   background: radial-gradient(circle at top left, #a18cd1 0%, #fbc2eb 100%) fixed;
 }
 

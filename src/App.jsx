@@ -292,7 +292,7 @@ function App() {
   };
 
   return (
-    <div className="fixed inset-0 w-full h-full overflow-hidden">
+    <div className="absolute inset-0 w-full h-full overflow-hidden">
       {/* Absolute Background Layer (Ignores Safe Area Padding) */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
         {/* Background Carousel for Stage 1 */}
