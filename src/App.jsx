@@ -61,7 +61,7 @@ function App() {
 
   const executeNo = () => {
     setConfirmation(null);
-    setStage(6); // Go to "No" page
+    setStage(7); // Go to "No" page
     setCurrentTrack("/no-music.mp3"); // Placeholder for sad music
   };
 
@@ -71,7 +71,7 @@ function App() {
 
   const executeYes = () => {
     setConfirmation(null);
-    setStage(5); // Go to "Yes" page
+    setStage(6); // Go to "Yes" page
     setCurrentTrack("/yes-music.mp3"); // Placeholder for happy music
     confetti({
       particleCount: 150,
@@ -181,6 +181,37 @@ function App() {
         );
       case 4:
         return (
+          <div className="flex flex-col items-center space-y-6">
+            <div className="flex items-center gap-2 mb-2">
+              <Stars className="w-6 h-6 text-yellow-300" />
+              <h2 className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg">
+                Important Notes
+              </h2>
+              <Stars className="w-6 h-6 text-yellow-300" />
+            </div>
+
+            <div className="bg-gradient-to-br from-white/15 to-white/5 p-6 rounded-2xl border border-white/25 backdrop-blur-lg max-w-md w-full shadow-xl">
+              <div className="space-y-4">
+                <p className="text-lg text-white/95 font-medium leading-relaxed text-center">
+                  ✨ Write your important notes here... ✨
+                </p>
+                <p className="text-base text-white/80 font-light leading-relaxed text-center">
+                  This is your special message space. <br />
+                  (Edit this text in the code!)
+                </p>
+              </div>
+            </div>
+
+            <button
+              onClick={handleNext}
+              className="mt-4 px-10 py-3 bg-gradient-to-r from-purple-500/80 to-pink-500/80 hover:from-purple-600 hover:to-pink-600 rounded-full text-white font-semibold transition-all backdrop-blur-sm border border-white/30 hover:scale-105 flex items-center gap-2 shadow-lg"
+            >
+              Ready? <Heart size={18} className="fill-current" />
+            </button>
+          </div>
+        );
+      case 5:
+        return (
           <div className="flex flex-col items-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-8 text-white drop-shadow-md">
               Will you be my girlfriend?
@@ -207,7 +238,7 @@ function App() {
         );
 
 
-      case 5:
+      case 6:
         return (
           <div className="flex flex-col items-center">
             <motion.div
@@ -232,7 +263,7 @@ function App() {
             </motion.div>
           </div>
         );
-      case 6:
+      case 7:
         return (
           <div className="flex flex-col items-center">
             <motion.div
