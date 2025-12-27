@@ -87,11 +87,11 @@ function App() {
       case 0:
         return (
           <div className="flex flex-col items-center space-y-6">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg text-white font-sans text-center">
+            <h1 className="text-3xl md:text-6xl font-bold mb-4 drop-shadow-lg text-white font-sans text-center px-4">
               Hi Adinda Sabrina! <span className="inline-block animate-bounce">🐮</span>
             </h1>
 
-            <div className="bg-white/10 p-8 rounded-xl border border-white/20 backdrop-blur-md max-w-md w-full text-center shadow-inner">
+            <div className="bg-white/10 p-6 md:p-8 rounded-xl border border-white/20 backdrop-blur-md max-w-sm md:max-w-md w-full text-center shadow-inner">
               <p className="text-lg md:text-xl text-white/90 font-light leading-relaxed">
                 I have something I want to tell you...
               </p>
@@ -215,7 +215,7 @@ function App() {
       case 5:
         return (
           <div className="flex flex-col items-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-8 text-white drop-shadow-md">
+            <h2 className="text-2xl md:text-5xl font-bold mb-8 text-white drop-shadow-md text-center">
               Will you be my girlfriend?
             </h2>
             <div className="flex flex-col md:flex-row gap-6 mt-4 items-center justify-center w-full">
@@ -292,7 +292,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center relative overflow-hidden p-4">
+    <div className="min-h-screen min-h-[100dvh] w-full flex items-center justify-center relative overflow-hidden p-4">
       {/* Background Carousel for Stage 1 */}
       {stage === 1 && (
         <BackgroundCarousel images={[

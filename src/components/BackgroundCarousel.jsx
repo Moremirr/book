@@ -51,7 +51,7 @@ const BackgroundCarousel = ({ images }) => {
                                 <div
                                     key={`${rowIndex}-${index}`}
                                     className="h-full flex-shrink-0 overflow-hidden"
-                                    style={{ width: '35vw', minWidth: '280px' }}
+                                    style={{ width: '45vw', minWidth: '200px' }}
                                 >
                                     <img
                                         src={src}
