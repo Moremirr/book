@@ -248,9 +248,9 @@ function App() {
               animate={{ scale: [0, 1.2, 1] }}
               transition={{ duration: 0.5 }}
             >
-              <Heart className="w-32 h-32 text-red-500 drop-shadow-2xl mb-6" fill="currentColor" />
+              <Heart className="w-20 h-20 md:w-32 md:h-32 text-red-500 drop-shadow-2xl mb-4" fill="currentColor" />
             </motion.div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 shadow-pink-500/50 drop-shadow-lg">
+            <h1 className="text-2xl md:text-5xl font-bold text-white mb-2 shadow-pink-500/50 drop-shadow-lg text-center">
               Yay! I'm so happy! 🎉
             </h1>
             <div className="max-h-[60vh] overflow-y-auto scrollbar-thin scrollbar-thumb-white/20 pr-4 mt-4">
