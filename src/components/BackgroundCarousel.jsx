@@ -19,7 +19,7 @@ const BackgroundCarousel = ({ images }) => {
     ];
 
     return (
-        <div className="fixed -top-[10vh] -left-[10vw] w-[120vw] h-[120vh] overflow-hidden z-0 pointer-events-none flex flex-col">
+        <div className="absolute -top-[50vh] -left-[50vw] w-[200vw] h-[200vh] overflow-hidden z-0 pointer-events-none flex flex-col">
             {/* Overlay for readability */}
             <div className="absolute inset-0 bg-black/50 z-10" />
 
