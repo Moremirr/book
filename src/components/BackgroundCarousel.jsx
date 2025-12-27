@@ -33,7 +33,6 @@ const BackgroundCarousel = ({ images }) => {
         { direction: 'right', duration: 80, offset: 0 },  // Much slower
         { direction: 'left', duration: 70, offset: 3 },
         { direction: 'right', duration: 90, offset: 5 },
-        { direction: 'left', duration: 75, offset: 2 },
     ];
 
     if (loadedImages.length === 0) {
