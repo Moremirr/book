@@ -7,28 +7,22 @@ html {
   margin: 0;
   padding: 0;
   overflow-y: auto;
-  /* Enable vertical scroll */
   overflow-x: hidden;
-  /* Match top color to hide top status bar gaps */
-  background-color: #a18cd1;
-  /* Critical: Disable bounce/elastic scrolling to prevent white bars */
+  /* Seamless Safety Gradient: Purple (Top) -> Pink (Bottom) */
+  background: linear-gradient(to bottom, #a18cd1, #fbc2eb);
+  background-attachment: fixed;
   overscroll-behavior: none;
   scrollbar-width: none;
-  /* Firefox */
 }
 
 body,
 #root {
   min-height: 100dvh;
-  /* Perfect full screen fit */
   margin: 0;
   padding: 0;
   width: 100%;
   position: relative;
-  /* Ensure the body has the gradient so it covers everything */
-  background: radial-gradient(circle at top left, #a18cd1 0%, #fbc2eb 100%) no-repeat;
-  background-attachment: fixed;
-  /* Try fixed, but if mobile fails it falls back to scroll which is fine on body */
+  background: transparent !important;
 }
 
 /* Hide scrollbar for Chrome/Safari/Opera */
