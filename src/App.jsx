@@ -292,7 +292,7 @@ function App() {
   };
 
   return (
-    <div className="h-[100dvh] w-full flex items-center justify-center relative overflow-hidden p-4">
+    <div className="fixed inset-0 w-full flex items-center justify-center overflow-hidden p-4 pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
       {/* Background Carousel for Stage 1 */}
       {stage === 1 && (
         <BackgroundCarousel images={[
