@@ -63,7 +63,7 @@ const MusicPlayer = ({ currentTrack }) => {
             >
                 {isPlaying ? <Volume2 size={24} /> : <VolumeX size={24} />}
             </button>
-            <audio ref={audioRef} src={currentTrack} loop playsInline />
+            <audio ref={audioRef} src={currentTrack} loop playsInline preload="metadata" />
         </div>
     );
 };

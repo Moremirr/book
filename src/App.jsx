@@ -160,7 +160,7 @@ function App() {
             {/* Willu Image - Main Focus */}
             <div className="mb-2">
               <img
-                src="/willu.png"
+                src="/willu.jpg"
                 alt="Willu"
                 className="w-56 h-56 md:w-72 md:h-72 object-cover rounded-2xl border-4 border-white/30 shadow-2xl"
               />
@@ -293,12 +293,12 @@ function App() {
       {stage === 1 && (
         <BackgroundCarousel images={[
           "/foto1.jpg",
-          "/foto2.png",
-          "/foto3.png",
+          "/foto2.jpg",
+          "/foto3.jpg",
           "/foto4.jpg",
-          "/foto5.png",
+          "/foto5.jpg",
           "/foto6.jpg",
-          "/foto7.png"
+          "/foto7.jpg"
         ]} />
       )}
 
