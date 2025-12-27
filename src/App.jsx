@@ -262,9 +262,9 @@ function App() {
           "/foto2.png",
           "/foto3.png",
           "/foto4.jpg",
-          "/foto5.jpg",
+          "/foto5.png",
           "/foto6.jpg",
-          "/foto7.jpg"
+          "/foto7.png"
         ]} />
       )}
 

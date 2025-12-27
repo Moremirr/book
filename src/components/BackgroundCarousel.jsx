@@ -1,23 +1,6 @@
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
 
 const BackgroundCarousel = ({ images }) => {
-    const [loadedImages, setLoadedImages] = useState([]);
-
-    // Lazy load images for better performance
-    useEffect(() => {
-        const imagePromises = images.map((src) => {
-            return new Promise((resolve) => {
-                const img = new Image();
-                img.onload = () => resolve(src);
-                img.onerror = () => resolve(src); // Still include even if error
-                img.src = src;
-            });
-        });
-
-        Promise.all(imagePromises).then(setLoadedImages);
-    }, [images]);
-
     // Shuffle function to avoid same images next to each other
     const shuffleArray = (array, offset = 0) => {
         const shuffled = [...array];
@@ -30,16 +13,10 @@ const BackgroundCarousel = ({ images }) => {
 
     // Create rows with different image orders to avoid adjacent duplicates
     const rows = [
-        { direction: 'right', duration: 80, offset: 0 },  // Much slower
+        { direction: 'right', duration: 80, offset: 0 },
         { direction: 'left', duration: 70, offset: 3 },
         { direction: 'right', duration: 90, offset: 5 },
     ];
-
-    if (loadedImages.length === 0) {
-        return (
-            <div className="fixed inset-0 z-0 bg-gradient-to-br from-purple-900/50 to-pink-900/50" />
-        );
-    }
 
     return (
         <div className="fixed inset-0 overflow-hidden z-0 pointer-events-none flex flex-col">
@@ -48,7 +25,7 @@ const BackgroundCarousel = ({ images }) => {
 
             {rows.map((row, rowIndex) => {
                 // Shuffle images differently for each row to avoid same images being adjacent
-                const shuffledImages = shuffleArray(loadedImages, row.offset);
+                const shuffledImages = shuffleArray(images, row.offset);
                 // Only duplicate once for lighter load
                 const rowImages = [...shuffledImages, ...shuffledImages];
 
@@ -80,7 +57,7 @@ const BackgroundCarousel = ({ images }) => {
                                         src={src}
                                         alt=""
                                         className="w-full h-full object-cover"
-                                        loading="lazy"
+                                        loading="eager"
                                     />
                                 </div>
                             ))}
