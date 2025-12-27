@@ -108,9 +108,9 @@ function App() {
       case 1:
         return (
           <div className="flex flex-col items-center space-y-6">
-            <div className="relative mb-2">
-              <Heart className="w-16 h-16 text-pink-300 animate-bounce absolute -top-10 left-1/2 transform -translate-x-1/2 opacity-50 blur-sm" />
-              <Heart className="w-16 h-16 text-pink-100 relative z-10" fill="currentColor" />
+            <div className="flex flex-col items-center gap-2 mb-2">
+              <Heart className="w-16 h-16 text-pink-300 animate-bounce opacity-50 blur-sm" />
+              <Heart className="w-16 h-16 text-pink-100 -mt-12" fill="currentColor" />
             </div>
 
             <div className="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-md max-w-xl w-full text-center shadow-inner">
@@ -265,13 +265,6 @@ function App() {
                 Ditunggu availablenya ya, nanti kita metu asik, gua traktir (kecuali playtopia)
               </p>
             </div>
-            <motion.div
-              animate={{ rotate: [0, 10, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 2 }}
-              className="mt-8 text-6xl"
-            >
-              🥰
-            </motion.div>
           </div>
         );
       case 7:
