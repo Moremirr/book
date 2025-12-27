@@ -8,8 +8,8 @@ html {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  /* Fallback color to hide white overscroll bars */
-  background-color: #a18cd1;
+  /* Better fallback gradient to match the design */
+  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
   /* Prevent elastic scrolling on mobile */
   overscroll-behavior: none;
 }
@@ -34,12 +34,11 @@ body,
 /* Fixed Background Layer */
 .fixed-background {
   position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  min-height: 100dvh;
-  /* Enforce full mobile height */
-  height: 100dvh;
+  /* Oversize the background to cover safe areas and bounce effects */
+  top: -10vh;
+  left: -10vw;
+  width: 120vw;
+  height: 120vh;
   z-index: -50;
   background: radial-gradient(circle at top left, #a18cd1 0%, #fbc2eb 100%);
   /* Ensure it stays put */
