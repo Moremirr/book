@@ -133,8 +133,13 @@ function App() {
       case 2:
         return (
           <div className="flex flex-col items-center space-y-6">
-            <div className="flex gap-4 text-4xl animate-pulse mb-2">
-              <span>🐔</span><span>🦆</span><span>🐇</span>
+            {/* Willu Image */}
+            <div className="mb-2">
+              <img
+                src="/willu.png"
+                alt="Willu"
+                className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-2xl border-4 border-white/30 shadow-2xl"
+              />
             </div>
 
             <div className="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-md max-w-md w-full text-center shadow-inner">
@@ -179,15 +184,6 @@ function App() {
       case 4:
         return (
           <div className="flex flex-col items-center">
-            {/* Willu Image */}
-            <div className="mb-6">
-              <img
-                src="/willu.png"
-                alt="Willu"
-                className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-2xl border-4 border-white/30 shadow-2xl"
-              />
-            </div>
-
             <h2 className="text-3xl md:text-5xl font-bold mb-8 text-white drop-shadow-md">
               Will you be my girlfriend?
             </h2>
