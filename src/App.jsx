@@ -258,10 +258,13 @@ function App() {
       {/* Background Carousel for Stage 1 */}
       {stage === 1 && (
         <BackgroundCarousel images={[
-          "https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=2070&auto=format&fit=crop",
-          "https://images.unsplash.com/photo-1516589178581-a78c3564a7b5?q=80&w=2070&auto=format&fit=crop",
-          "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=1976&auto=format&fit=crop",
-          "https://images.unsplash.com/photo-1516233758813-a38d024919c5?q=80&w=1968&auto=format&fit=crop"
+          "/foto1.jpg",
+          "/foto2.png",
+          "/foto3.png",
+          "/foto4.jpg",
+          "/foto5.jpg",
+          "/foto6.jpg",
+          "/foto7.jpg"
         ]} />
       )}
 
