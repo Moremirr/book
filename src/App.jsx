@@ -288,7 +288,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-[100dvh] w-full flex items-center justify-center relative overflow-hidden p-4 pb-20 md:pb-0">
+    <div className="min-h-[100dvh] w-full flex items-center justify-center relative overflow-hidden p-4 pb-32 md:pb-0">
       {/* Background Carousel for Stage 1 */}
       {stage === 1 && (
         <BackgroundCarousel images={[
