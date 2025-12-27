@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, Stars, Sparkles } from 'lucide-react';
 import GlassCard from './components/GlassCard';
 import MusicPlayer from './components/MusicPlayer';
+import BackgroundCarousel from './components/BackgroundCarousel';
 import confetti from 'canvas-confetti';
 
 // Lightweight 2D Floating Hearts Component
@@ -62,9 +63,6 @@ function App() {
     setConfirmation(null);
     setStage(6); // Go to "No" page
     setCurrentTrack("/no-music.mp3"); // Placeholder for sad music
-    // Keep window.open if desired, or remove if the page change is enough. 
-    // User said "halaman utama juga akan berubah... begitupun... link", implying both.
-    window.open("https://drive.google.com/drive/folders/1-l5aGLOAtemWz3l-tbEY1eBeXH0i8BR1?usp=share_link", "_blank");
   };
 
   const handleYes = () => {
@@ -81,8 +79,6 @@ function App() {
       origin: { y: 0.6 },
       colors: ['#ff69b4', '#ff1493', '#ffffff']
     });
-    // Open immediately to avoid browser popup blockers
-    window.open("https://drive.google.com/drive/folders/1LQXbXP5NATjIwQrX1k_nUoC26-gR52u6?usp=share_link", "_blank");
   };
 
   // Content for each stage
@@ -137,7 +133,13 @@ function App() {
       case 2:
         return (
           <div className="flex flex-col items-center space-y-6">
-            <div className="flex gap-4 text-4xl animate-pulse mb-2">
+            <BackgroundCarousel images={[
+              "https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=2070&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1516589178581-a78c3564a7b5?q=80&w=2070&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=1976&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1516233758813-a38d024919c5?q=80&w=1968&auto=format&fit=crop"
+            ]} />
+            <div className="flex gap-4 text-4xl animate-pulse mb-2 relative z-10">
               <span>🐔</span><span>🦆</span><span>🐇</span>
             </div>
 
