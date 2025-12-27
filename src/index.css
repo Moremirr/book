@@ -5,11 +5,12 @@
 html,
 body {
   height: 100%;
+  height: -webkit-fill-available;
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background: radial-gradient(circle at top left, #a18cd1 0%, #fbc2eb 100%) no-repeat fixed;
   background-color: #a18cd1;
-  /* Solid fallback */
 }
 
 #root {

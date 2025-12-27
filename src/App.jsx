@@ -292,7 +292,7 @@ function App() {
   };
 
   return (
-    <div className="fixed inset-0 w-full h-full overflow-hidden bg-[#a18cd1]">
+    <div className="fixed inset-0 w-full h-full overflow-hidden">
       {/* Absolute Background Layer (Ignores Safe Area Padding) */}
       <div
         className="absolute -inset-[5%] w-[110%] h-[110%] pointer-events-none z-0"
