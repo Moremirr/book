@@ -8,9 +8,8 @@ html {
   padding: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  /* Seamless Safety Gradient: Purple (Top) -> Pink (Bottom) */
-  background: linear-gradient(to bottom, #a18cd1, #fbc2eb);
-  background-attachment: fixed;
+  /* Solid Pink Fallback: Blends with bottom of gradient, safe for mobile */
+  background-color: #fbc2eb;
   overscroll-behavior: none;
   scrollbar-width: none;
 }
