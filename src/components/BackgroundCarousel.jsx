@@ -1,13 +1,46 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 const BackgroundCarousel = ({ images }) => {
-    // Create multiple rows, each with duplicated images for seamless looping
+    const [loadedImages, setLoadedImages] = useState([]);
+
+    // Lazy load images for better performance
+    useEffect(() => {
+        const imagePromises = images.map((src) => {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = () => resolve(src);
+                img.onerror = () => resolve(src); // Still include even if error
+                img.src = src;
+            });
+        });
+
+        Promise.all(imagePromises).then(setLoadedImages);
+    }, [images]);
+
+    // Shuffle function to avoid same images next to each other
+    const shuffleArray = (array, offset = 0) => {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = (i + offset) % shuffled.length;
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    };
+
+    // Create rows with different image orders to avoid adjacent duplicates
     const rows = [
-        { direction: 'right', duration: 40 },
-        { direction: 'left', duration: 35 },
-        { direction: 'right', duration: 45 },
-        { direction: 'left', duration: 38 },
+        { direction: 'right', duration: 80, offset: 0 },  // Much slower
+        { direction: 'left', duration: 70, offset: 3 },
+        { direction: 'right', duration: 90, offset: 5 },
+        { direction: 'left', duration: 75, offset: 2 },
     ];
+
+    if (loadedImages.length === 0) {
+        return (
+            <div className="fixed inset-0 z-0 bg-gradient-to-br from-purple-900/50 to-pink-900/50" />
+        );
+    }
 
     return (
         <div className="fixed inset-0 overflow-hidden z-0 pointer-events-none flex flex-col">
@@ -15,10 +48,10 @@ const BackgroundCarousel = ({ images }) => {
             <div className="absolute inset-0 bg-black/50 z-10" />
 
             {rows.map((row, rowIndex) => {
-                // Offset images for each row to create variety
-                const rowImages = [...images, ...images, ...images];
-                const offset = rowIndex * 1; // Small offset per row
-                const reorderedImages = [...rowImages.slice(offset), ...rowImages.slice(0, offset)];
+                // Shuffle images differently for each row to avoid same images being adjacent
+                const shuffledImages = shuffleArray(loadedImages, row.offset);
+                // Only duplicate once for lighter load
+                const rowImages = [...shuffledImages, ...shuffledImages];
 
                 return (
                     <div key={rowIndex} className="flex-1 overflow-hidden relative">
@@ -38,16 +71,17 @@ const BackgroundCarousel = ({ images }) => {
                             }}
                             style={{ width: 'fit-content' }}
                         >
-                            {reorderedImages.map((src, index) => (
+                            {rowImages.map((src, index) => (
                                 <div
-                                    key={index}
+                                    key={`${rowIndex}-${index}`}
                                     className="h-full flex-shrink-0"
-                                    style={{ width: '40vw', minWidth: '300px' }}
+                                    style={{ width: '35vw', minWidth: '280px' }}
                                 >
                                     <img
                                         src={src}
-                                        alt={`Carousel row ${rowIndex + 1} image ${index + 1}`}
+                                        alt=""
                                         className="w-full h-full object-cover"
+                                        loading="lazy"
                                     />
                                 </div>
                             ))}
