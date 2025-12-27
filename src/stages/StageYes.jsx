@@ -16,7 +16,7 @@ const StageYes = () => {
       <h1 className="text-2xl md:text-5xl font-bold text-white shadow-pink-500/50 drop-shadow-lg text-center leading-tight">
         Yay! I'm so happy! 🎉
       </h1>
-      <div className="max-h-[50vh] w-full overflow-y-auto scrollbar-thin scrollbar-thumb-white/20 pr-4 touch-auto">
+      <div className="max-h-[70vh] w-full overflow-y-auto scrollbar-thin scrollbar-thumb-white/20 pr-4 touch-auto">
         <div className="text-lg md:text-xl text-white/90 leading-relaxed text-justify space-y-4 pb-6">
           <p>Haloo dindin, ini beneran nih kamu pilih opsi iya!??, gila banget dunia ini</p>
           <p>THANK YOUUU UDAH PILIH IYA YAH‼️‼️‼️</p>
