@@ -334,15 +334,15 @@ function App() {
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="bg-white/10 border border-white/20 backdrop-blur-xl p-8 rounded-2xl max-w-sm w-full text-center shadow-2xl"
+              className="bg-white/10 border border-white/20 backdrop-blur-xl p-8 rounded-2xl max-w-md w-full text-center shadow-2xl"
             >
               <h3 className="text-2xl font-bold text-white mb-4">
                 Are you sure? 🤔
               </h3>
               <p className="text-white/80 mb-8">
                 {confirmation === 'yes'
-                  ? "You're about to make me the happiest person alive! Ready?"
-                  : "Are you really sure? Think about it one more time... 🥺"}
+                  ? "You're about to be stuck with me, are you ready?"
+                  : "Are you really sure? I can wait if you need more time to think"}
               </p>
               <div className="flex gap-4 justify-center">
                 <button
