@@ -84,6 +84,7 @@ function App() {
       <AnimatePresence>
         {stage === 1 && (
           <motion.div
+            className="fixed inset-0 z-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

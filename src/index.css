@@ -34,17 +34,14 @@ body,
 /* Fixed Background Layer */
 .fixed-background {
   position: fixed;
-  /* Vertical bleeding to cover status bars / address bars */
-  top: -20vh;
-  bottom: -20vh;
-  left: 0;
+  inset: 0;
   width: 100%;
-  min-height: 140vh;
-  /* Ensure it's tall enough */
+  height: 100%;
   z-index: -10;
   background: radial-gradient(circle at top left, #a18cd1 0%, #fbc2eb 100%);
   transform: translateZ(0);
   pointer-events: none;
+  backface-visibility: hidden;
 }
 
 /* Glassmorphism Utilities */
