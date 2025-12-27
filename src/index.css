@@ -3,23 +3,26 @@
 @tailwind utilities;
 
 html {
-  min-height: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
-  /* Fallback to the bottom pink color to hide scrolling gaps */
-  background: #fbc2eb;
+  overflow: hidden;
+  /* Apply the same gradient to the root to ensure seamless edges */
+  background: radial-gradient(circle at top left, #a18cd1 0%, #fbc2eb 100%) no-repeat fixed;
   /* Prevent elastic scrolling/bounce on the root to hide background */
   overscroll-behavior: none;
 }
 
 body,
 #root {
-  min-height: 100vh;
+  height: 100%;
   margin: 0;
   padding: 0;
   width: 100%;
   position: relative;
+  overflow: hidden;
   background: transparent !important;
+  overscroll-behavior: none;
 }
 
 @layer base {
@@ -31,11 +34,9 @@ body,
 /* Fixed Background Layer */
 .fixed-background {
   position: fixed;
-  /* Vertical Oversize to cover browser bars */
-  top: -10vh;
-  left: 0;
-  width: 100vw;
-  height: 120vh;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: -10;
   background: radial-gradient(circle at top left, #a18cd1 0%, #fbc2eb 100%);
   transform: translateZ(0);
