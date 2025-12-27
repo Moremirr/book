@@ -314,9 +314,11 @@ function App() {
       )}
 
       <AnimatePresence mode="wait">
-        <GlassCard key={stage}>
-          {renderContent()}
-        </GlassCard>
+        <div className="transform -translate-y-12 md:translate-y-0 w-full flex justify-center">
+          <GlassCard key={stage}>
+            {renderContent()}
+          </GlassCard>
+        </div>
       </AnimatePresence>
 
       {/* Confirmation Modal */}
@@ -364,7 +366,8 @@ function App() {
         )}
       </AnimatePresence>
 
-      <MusicPlayer currentTrack={currentTrack} showToggle={stage !== 0} />
+      {stage !== 0 && <MusicPlayer currentTrack={currentTrack} showToggle={true} />}
+      {stage === 0 && <MusicPlayer currentTrack={currentTrack} showToggle={false} />}
     </div>
   );
 }
