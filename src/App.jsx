@@ -76,7 +76,7 @@ function App() {
   };
 
   return (
-    <div className="fixed inset-0 w-full h-[100dvh] overflow-hidden">
+    <div className="fixed inset-0 w-full h-full overflow-hidden">
       {/* Global Fixed Background */}
       <div className="fixed-background" />
 
