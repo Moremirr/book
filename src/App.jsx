@@ -114,7 +114,7 @@ function App() {
             </div>
 
             <div className="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-md max-w-xl w-full text-center shadow-inner">
-              <p className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-4">
+              <p className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-4 text-justify">
                 Every time i interact with you, my day gets a little brighter. Seluruh beban hidup yang aku miliki entah kenapa menjadi lebih ringan.
               </p>
               <p className="text-lg text-white/80 font-light">
@@ -138,7 +138,7 @@ function App() {
             </div>
 
             <div className="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-md max-w-xl w-full text-center shadow-inner">
-              <p className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-4">
+              <p className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-4 text-justify">
                 I love your smile, your laugh, your strength, the way you light up the room when you enter.
               </p>
               <p className="text-lg text-white/80 font-light">
@@ -191,14 +191,14 @@ function App() {
             </div>
 
             <div className="bg-gradient-to-br from-white/15 to-white/5 p-6 rounded-2xl border border-white/25 backdrop-blur-lg max-w-md md:max-w-2xl w-full shadow-xl">
-              <div className="space-y-4">
-                <p className="text-lg text-white/95 font-medium leading-relaxed text-center">
+              <div className="space-y-4 max-h-[50vh] overflow-y-auto scrollbar-thin scrollbar-thumb-white/20 pr-2">
+                <p className="text-lg text-white/95 font-medium leading-relaxed text-justify">
                   Setelah halaman ini kamu harus siap untuk membuat pilihan, whatever you choose i will always support it, intinya aku bakal nerima pilihan apapun yang kamu pilih <br />
                   Just choose what your heart want<br />
                   Oh yah aku ga akan bales chat mu kalo kamu belum make the choice. Jadi pastiin ketika kamu udah nentuin pilihan kamu, just chat me okay? <br />
                   One last thing, kamu ga perlu langsung ngasih aku jawaban pada hari ini, i'll wait as long as you need to answer.
                 </p>
-                <p className="text-base text-white/80 font-light leading-relaxed text-center">
+                <p className="text-base text-white/80 font-light leading-relaxed text-justify">
                   (btw jangan lupa chat ya kalo kamu udah buat choice nya, disini gaada fitur yang ngirim hasil pilihan kamu ke aku olehnya😭)
                 </p>
               </div>
