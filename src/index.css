@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 html {
-  min-height: 100%;
+  min-height: 100dvh;
   margin: 0;
   padding: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  /* Solid Pink Fallback: Blends with bottom of gradient, safe for mobile */
-  background-color: #fbc2eb;
+  /* Dual-tone Safety Gradient: Purple Top, Pink Bottom */
+  background: linear-gradient(to bottom, #a18cd1, #fbc2eb);
   overscroll-behavior: none;
   scrollbar-width: none;
 }
