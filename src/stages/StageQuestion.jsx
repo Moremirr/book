@@ -4,7 +4,7 @@ const StageQuestion = ({ onYes, onNo }) => {
     return (
         <div className="flex flex-col items-center">
             <h2 className="text-2xl md:text-5xl font-bold mb-8 text-white drop-shadow-md text-center">
-                Will you be my girlfriend?
+                Would you like to see where this could go with me?
             </h2>
             <div className="flex flex-col md:flex-row gap-6 mt-4 items-center justify-center w-full">
                 {/* YES Button */}
