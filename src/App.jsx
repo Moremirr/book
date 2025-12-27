@@ -314,9 +314,11 @@ function App() {
       )}
 
       <AnimatePresence mode="wait">
-        <GlassCard key={stage}>
-          {renderContent()}
-        </GlassCard>
+        <div className="pt-12 md:pt-16">
+          <GlassCard key={stage}>
+            {renderContent()}
+          </GlassCard>
+        </div>
       </AnimatePresence>
 
       {/* Confirmation Modal */}
