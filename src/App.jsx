@@ -293,12 +293,6 @@ function App() {
 
   return (
     <div className="fixed inset-0 w-full h-full overflow-hidden">
-      {/* Absolute Background Layer (Ignores Safe Area Padding) */}
-      <div
-        className="absolute -inset-[5%] w-[110%] h-[110%] pointer-events-none z-0"
-        style={{ background: 'radial-gradient(circle at top left, #a18cd1 0%, #fbc2eb 100%)' }}
-      />
-
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-10">
         {/* Background Carousel for Stage 1 */}
         {stage === 1 && (

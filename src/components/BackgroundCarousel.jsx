@@ -45,7 +45,7 @@ const BackgroundCarousel = ({ images }) => {
                                     ease: 'linear',
                                 },
                             }}
-                            style={{ width: 'fit-content' }}
+                            style={{ width: 'fit-content', transform: 'translateZ(0)' }}
                         >
                             {rowImages.map((src, index) => (
                                 <div
