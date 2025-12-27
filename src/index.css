@@ -1,28 +1,35 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 html {
-  height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  /* Apply the same gradient to the root to ensure seamless edges */
-  background: radial-gradient(circle at top left, #a18cd1 0%, #fbc2eb 100%) no-repeat fixed;
-  /* Prevent elastic scrolling/bounce on the root to hide background */
+  overflow-y: auto;
+  /* Enable vertical scroll */
+  overflow-x: hidden;
+  /* Match top color to hide top status bar gaps */
+  background-color: #a18cd1;
+  /* Critical: Disable bounce/elastic scrolling to prevent white bars */
   overscroll-behavior: none;
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 body,
 #root {
-  height: 100%;
+  min-height: 100dvh;
+  /* Perfect full screen fit */
   margin: 0;
   padding: 0;
   width: 100%;
   position: relative;
-  overflow: hidden;
-  background: transparent !important;
-  overscroll-behavior: none;
+  /* Ensure the body has the gradient so it covers everything */
+  background: radial-gradient(circle at top left, #a18cd1 0%, #fbc2eb 100%) no-repeat;
+  background-attachment: fixed;
+  /* Try fixed, but if mobile fails it falls back to scroll which is fine on body */
+}
+
+/* Hide scrollbar for Chrome/Safari/Opera */
+::-webkit-scrollbar {
+  display: none;
 }
 
 @layer base {
